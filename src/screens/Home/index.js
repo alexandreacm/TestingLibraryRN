@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Platform } from 'react-native';
 
-import AddList from '../../components/AddList';
-import ItemsList from '../../components/ItemsList';
-import Error from '../../components/Error'
+import AddList from '@components/AddList';
+import ItemsList from '@components/ItemsList';
+import Error from '@components/Error'
 
 export default function Home() {
   const [list, setList] = useState([])
