@@ -11,7 +11,9 @@ export default function Home() {
   const [error, setError] = useState(false);
 
   function handleAdd() {
-    if (newText === null || newText === '') {
+    let validation = newText === null || newText === '';
+    
+    if (validation) {
       setError(true);
       return;
     }

@@ -9,16 +9,10 @@ import {
 import { styles } from './styles';
 
 export default function ItemList({ data, onDelete }) {
-  return (
-    <View style={styles.container}>
-      <FlatList
-        testID='flatTodo'
-        data={data}
-        keyExtractor={item => String(item.id)}
-        showsVerticalScrollIndicator={false}
-        renderItem={({ item }) => {
-          return (
-            <View key={data?.id} style={styles.viewItem}>
+
+  function renderItem({ item }){
+    return (
+      <View key={data?.id} style={styles.viewItem}>
               <Text>{item?.text}</Text>
 
               <TouchableOpacity
@@ -28,8 +22,16 @@ export default function ItemList({ data, onDelete }) {
                 <Text style={styles.textButton}>X</Text>
               </TouchableOpacity>
             </View>
-          );
-        }}
+    )
+  }
+  return (
+    <View style={styles.container}>
+      <FlatList
+        testID='flatTodo'
+        data={data}
+        keyExtractor={item => String(item.id)}
+        showsVerticalScrollIndicator={false}
+        renderItem={renderItem}
       />
     </View>
   );
