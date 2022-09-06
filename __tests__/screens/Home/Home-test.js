@@ -1,7 +1,7 @@
 import React from 'react';
 import App from '../../../App';
 
-import renderer from 'react-test-renderer';
+import renderer, { create } from 'react-test-renderer';
 import { render, fireEvent } from '@testing-library/react-native';
 
 describe('Should render all tests', () => {
@@ -9,6 +9,14 @@ describe('Should render all tests', () => {
 
   test('Should run snapshot test', () => {
     expect(tree).toMatchSnapshot();
+  });
+
+  test('Should render correctly component', () => {
+    render(<App />);
+  });
+
+  test('Should render correctly ap with react-test-renderer', () => {
+    renderer.create(<App />);
   });
 
   test('Should Create an item', () => {
@@ -23,8 +31,8 @@ describe('Should render all tests', () => {
     fireEvent.press(button);
 
     const createdItem = getByText(createdItemText);
-    //expect(createdItem).not.toBeNull();
-    expect(createdItem).not.toBe(null);
+    expect(createdItem).not.toBeNull();
+    // expect(createdItem).not.toBe(null);
   });
 
   test('Should Create an item through getByTestID', () => {

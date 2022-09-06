@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Should render all tests in App Should run snapshot test 1`] = `
+exports[`Should render all tests Should run snapshot test 1`] = `
 <View
   style={
     Object {
