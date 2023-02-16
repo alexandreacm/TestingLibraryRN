@@ -1,7 +1,8 @@
 // .eslintrc.js
 module.exports = {
   env: {
-    es6: true
+    es6: true,
+    jest: true
   },
   extends: ['airbnb', 'prettier', 'prettier/react'],
   globals: {
