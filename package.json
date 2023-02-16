@@ -57,6 +57,7 @@
   },
   "jest": {
     "preset": "react-native",
+    "setupFiles": ["<rootDir>/__tests__/jest.setup.js"],
     "moduleFileExtensions": [
       "ts",
       "tsx",
@@ -69,7 +70,8 @@
     "testPathIgnorePatterns": [
       "<rootDir>/ios",
       "<rootDir>/android",
-      "<rootDir>/node_modules"
+      "<rootDir>/node_modules",
+      "<rootDir>/__tests__/jest.setup.js"
     ]
   },
   "config": {

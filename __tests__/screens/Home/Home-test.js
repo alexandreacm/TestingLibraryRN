@@ -16,7 +16,7 @@ describe('Should render all tests', () => {
   });
 
   test('Should render correctly ap with react-test-renderer', () => {
-    renderer.create(<App />);
+    create(<App />);
   });
 
   test('Should Create an item', () => {
@@ -100,9 +100,10 @@ describe('Should render all tests', () => {
     const button = getByTestId('btnTodo');
     fireEvent.press(button);
 
-    const createdItemText = 'Please insert a valid text';
-    const errorMessage = getByText(createdItemText);
+    // const createdItemText = 'Please insert a valid text';
+    const errorMessage = getByText('Please insert a valid text');
 
+    // expect(errorMessage).not.toBe(null);
     expect(errorMessage).not.toBeNull();
   });
 
