@@ -35,6 +35,21 @@ describe('Should render all tests', () => {
     // expect(createdItem).not.toBe(null);
   });
 
+  test('Should Create an item and check with toBeDefined', () => {
+    const { getByText, getByPlaceholderText } = render(<App />);
+
+    const input = getByPlaceholderText('Write something');
+    const button = getByText('+');
+
+    const createdItemText = 'first todo';
+
+    fireEvent.changeText(input, createdItemText);
+    fireEvent.press(button);
+
+    const createdItem = getByText(createdItemText);
+    expect(createdItem).toBeDefined();
+  });
+
   test('Should Create an item through getByTestID', () => {
     const { getByText, getByTestId, getByPlaceholderText } = render(<App />);
 
@@ -124,6 +139,5 @@ describe('Should render all tests', () => {
     const errorMessage = queryByText(createdItemErrorMessage);
 
     expect(errorMessage).toBeNull();
-    //expect(queryByText(createdItemErrorMessage)).toBe(null);
   });
 });
