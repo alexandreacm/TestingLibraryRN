@@ -11,7 +11,7 @@
     "commit": "npx git-cz",
     "test-update": "jest -u",
     "test-report": "jest --collect-coverage",
-    "test-collect": "jest --collectCoverage"
+    "test:coverage": "jest --collectCoverage"
   },
   "husky": {
     "hooks": {
