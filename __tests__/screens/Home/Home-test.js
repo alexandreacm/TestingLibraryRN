@@ -35,6 +35,21 @@ describe('Should render all tests', () => {
     // expect(createdItem).not.toBe(null);
   });
 
+  test('Should Create an item and test an item with RegEx', () => {
+    const { getByText, getAllByText, getByPlaceholderText } = render(<App />);
+
+    const input = getByPlaceholderText('Write something');
+    const button = getByText('+');
+
+    const createdItemText = 'first todo';
+
+    fireEvent.changeText(input, createdItemText);
+    fireEvent.press(button);
+
+    const createdItem = getAllByText(/first todo/i);
+    expect(createdItem.length).toBe(1);
+  });
+
   test('Should Create an item and check with toBeDefined', () => {
     const { getByText, getByPlaceholderText } = render(<App />);
 
