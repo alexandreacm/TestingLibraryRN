@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, Platform } from 'react-native';
+import { View } from 'react-native';
 
 import AddList from '@components/AddList';
 import ItemsList from '@components/ItemsList';
 import Error from '@components/Error';
+
+import { styles } from './styles';
 
 import SplashScreen from 'react-native-splash-screen';
 
@@ -52,14 +54,3 @@ export default function Home() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginTop: Platform.OS === 'ios' ? 60 : 0,
-    margin: 20
-  },
-  viewList: {
-    marginBottom: 10
-  }
-});

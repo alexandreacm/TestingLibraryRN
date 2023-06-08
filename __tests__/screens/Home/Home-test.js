@@ -4,7 +4,7 @@ import App from '../../../App';
 import renderer, { create } from 'react-test-renderer';
 import { render, fireEvent } from '@testing-library/react-native';
 
-describe('Should render all tests', () => {
+describe('HomeScreen', () => {
   const tree = renderer.create(<App />).toJSON();
 
   test('Should run snapshot test', () => {
